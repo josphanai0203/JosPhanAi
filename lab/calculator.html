@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool chuyển đổi hệ cơ số</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./cal.css">
+
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <p>Tool chuyển đổi hệ cơ số</p>
+        </div>
+        <div id="selection">
+
+            <select name="" id="unconvert" >
+                <option value="Binary">Binary</option>
+                <option value="Decimal" selected>Decimal</option>
+                <option value="Octal">Octal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+    
+            </select>
+            <span> TO </span>
+            <select name="" id="convert">
+                <option value="Binary" selected>Binary</option>
+                <option value="Decimal">Decimal</option>
+                <option value="Octal">Octal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+            </select>
+        </div>
+        <div class="input">
+          <table>
+            <tr>
+                <td><span>Nhập :</span></td>
+                <td> <input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td><span>Result :</span></td>
+                <td><input type="text" id="result" readonly ></td>
+            </tr>
+          </table>
+            <button class="btn" onclick="myFunction()">Convert</button>
+
+
+        </div>
+        <hr>
+        <div class="subContent">
+            <p>Lưu Ý : + Tool hiện tại chỉ chuyển đổi được với những số nguyên dương <br> + Đối với Decimal sang Binary có thể chuyển đổi cả số âm </p>
+            <p class="autho">Tool được tạo bởi <a href="https://www.facebook.com/jos.phanai.73/">Jos Phan Ái</a></p>
+        </div>
+    </div>
+
+</body>
+<script src="./app.js"></script>
+</html>
