@@ -619,7 +619,7 @@ function checkBinary(){
 }
 function checkDecimal(){
     var unconvert = document.getElementById('input').value.trim();
-    if (/^[+-]?[0-9]+[.,]{1}?[0-9]+/g.test(unconvert)) {
+    if (/^[+-]?[0-9]+([.,]{1})?[0-9]+/g.test(unconvert)) {
         return true
     }
     else {
