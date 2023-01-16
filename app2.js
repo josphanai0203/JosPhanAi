@@ -353,13 +353,16 @@ function binaryToDecimal(unconvert){
     }
     else {
         unconvert = parseInt(unconvert);
+        console.log(unconvert)
+
          for(let i = 0;i<lengthNumber;i++){
-        var temp = unconvert %2 ;
-        count = count + temp*Math.pow(2,i)
-        unconvert = Math.floor(unconvert/10);
-        return count.toString() ;
-    }
-    }
+             var temp = unconvert %2 ;
+              count = count + temp*Math.pow(2,i)
+                 unconvert = Math.floor(unconvert/10);
+                console.log(count.toString())
+            }
+            return count.toString() ;
+        }
 }
 function octalToDecimal(unconvert){
     var haveDot = unconvert.search("\\.")
@@ -396,8 +399,8 @@ function hexadecimalToDecimal(unconvert){
     var count = 0;
     if (haveDot>0) {
         var subArr = unconvert.split("")
-        for(let i = 0;i<=haveDot-1;i++){
-            var temp = unconvert.charAt(lengthNumber-i);
+        for(let i = 1 , g = 0;i<=haveDot;i++ ,g++){
+            var temp = unconvert.charAt(haveDot -i);
             switch (temp) {
                 case "1":
                     temp = 1;
@@ -460,10 +463,9 @@ function hexadecimalToDecimal(unconvert){
                 default:
                     break;
             }
-            count = count + temp*Math.pow(16,i)
+            count = count + temp*Math.pow(16,g)
         }
-        console.log(count)
-        for (let i = haveDot +1, g = -1; i < subArr.length; i++,g--) {
+        for (let i = haveDot +1, g = -1; i <= lengthNumber; i++,g--) {
             var temp = subArr[i];
             switch (temp) {
                 case "1":
