@@ -393,3 +393,4 @@ function reset(){
     document.getElementById('result').value = "";
     document.getElementById('input').value = ""
 }
+//ckdsmvsd

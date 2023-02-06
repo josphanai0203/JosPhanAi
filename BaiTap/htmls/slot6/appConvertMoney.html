@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <p>Tool chuyển đổi Tiền Tệ</p>
+        </div>
+        <div id="selection">
+
+            <select name="" id="unconvert" >
+                <option value="USD">USD</option>
+                <option value="VND" selected>VND</option>
+              
+    
+            </select>
+            <span> TO </span>
+            <select name="" id="convert">
+                <option value="Binary" selected>USD</option>
+                <option value="Decimal">VND</option>
+               
+            </select>
+        </div>
+        <div class="input">
+          <table>
+            <tr>
+                <td><span>Nhập :</span></td>
+                <td> <input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td><span>Result :</span></td>
+                <td><input type="text" id="result" readonly ></td>
+            </tr>
+          </table>
+            <button class="btn" onclick="myFunction()">Convert</button>
+
+
+        </div>
+</body>
+<script>
+    function vndToUsd(number) 
+    {
+        var newValue = number/23000;
+        return newValue.toFixed(3)
+    }
+    function myFunction(){
+        var input = parseInt(document.getElementById("input").value)
+        var caseA = document.getElementById("unconvert").value
+        var caseB = document.getElementById("convert").value
+        var money = 23400;
+        switch (caseA) {
+            case 'USD':
+                switch (caseB) {
+                    case 'VND':
+                        document.getElementById('result').value = vndToUsd(input)
+                        break;
+                
+                    default:
+                        document.getElementById('result').value = input
+                        break;
+                }
+                break;
+        
+            default:
+                 switch (caseB) {
+                    case 'VND':
+                         document.getElementById('result').value = input
+                        break;
+                
+                    default:
+                    document.getElementById('result').value = vndToUsd(input)
+                        break;
+                }
+                break;
+        }
+    }
+</script>
+<style>
+    html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: linear-gradient( to right,orange ,blue );
+}
+.box {
+    width: 500px;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    border-radius: 8px;
+    margin: 12px !important;
+
+}
+#selection {
+    text-align: center;
+    padding: 12px;
+}
+#selection select {
+    padding: 4px;
+    margin: 0 16px;
+}
+.input {
+    margin: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn {
+    width: 20%;
+    margin: auto;
+    border: 1px solid #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FA8176;
+    border-radius: 12px;
+    padding: 4px;
+    cursor: pointer;
+}
+.btn:hover {
+    border: 1px solid #FA8176;
+    background-color: aqua;
+    transition:linear 0.5s;
+}
+#input,#result {
+    margin: 12px 0;
+}
+.subContent {
+    margin: 0 24px;
+}
+a {
+    text-decoration: none;
+}
+span {
+    user-select: none;
+}
+</style>
+</html>

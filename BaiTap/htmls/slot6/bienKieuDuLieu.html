@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div class="box" >
+        <P style="text-align: center;">Tính Điểm Trung Bình 3 môn</P>
+        <input type="text" id="Physical" placeholder="Điểm Vật Lý">
+        <input type="text"  id="chemistry" placeholder="Điểm Hóa Học">
+        <input type="text" id="biology" placeholder="Điểm Sinh Học">
+        <button onclick="avgSubect()">Summit</button>
+        <br>
+        <input type="text" readonly id="output1" placeholder="Kết Quả" style="margin-top: 12px;">
+
+    </div>
+    <div class="box" >
+        <P style="text-align: center;">Chuyển Đổi Nhiệt Độ</P>
+        <input type="text" id="tempurature" placeholder="Nhập độ C">
+        <button onclick="tempurature()">Convert</button>
+        <br>
+        <input type="text" readonly id="output2" placeholder="Kết Quả" style="margin-top: 12px;">
+
+    </div>
+    <div class="box" >
+        <P style="text-align: center;">Diện Tích Hình Tròn</P>
+        <input type="text" id="bankinh1" placeholder="Nhập bán kính">
+        <button onclick="areaOfCricle()">Convert</button>
+        <br>
+        <input type="text" readonly id="output3" placeholder="Kết Quả" style="margin-top: 12px;">
+
+    </div>
+    <div class="box" >
+        <P style="text-align: center;">Chu vi Hình Tròn</P>
+        <input type="text" id="bankinh2" placeholder="Nhập Bán Kính">
+        <button onclick="pirimeter()">Convert</button>
+        <br>
+        <input type="text" readonly id="output4" placeholder="Kết Quả" style="margin-top: 12px;">
+
+    </div>
+    
+</body>
+<script>
+    
+    function avgSubect(){
+       var a= document.getElementById("Physical").value.trim()
+       var b= document.getElementById("chemistry").value.trim()
+       var c= document.getElementById("biology").value.trim()
+        var avg = (parseFloat(a) + parseFloat(b) +parseFloat(c) ) /3
+        document.getElementById('output1').value = avg;
+    }
+    function tempurature(){
+        var t = parseFloat(document.getElementById("tempurature").value.trim())
+        var output2 = ((t/5)*9 + 32);
+        document.getElementById("output2").value = output2.toFixed(1)
+
+    }
+    function areaOfCricle(){
+        var r = parseFloat(document.getElementById("bankinh1").value.trim())
+        var area = Math.PI * r*r;
+        document.getElementById("output3").value = area.toFixed(5)
+
+    }
+    function pirimeter(){
+        var r = parseFloat(document.getElementById("bankinh2").value.trim())
+        var pirimeter = 2*Math.PI*r;
+        document.getElementById("output4").value = pirimeter.toFixed(5)
+
+    }
+</script>
+<style>
+
+</style>
+</html>

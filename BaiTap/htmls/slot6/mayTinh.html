@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="box" style="margin: 12px 0;">
+            <input type="text" name="" id="a" placeholder="nhap so a">
+            <input type="text" name="" id="b" placeholder="nhap so b">
+
+        </div>
+        <button onclick="add()">add(+)</button>
+        <button onclick="sub()">subtraction(-)</button>
+        <button onclick="mul()">Mutiplication(*)</button>
+        <button onclick="div()">Division(/)</button>
+        <div class="box" style="margin: 12px 0;">
+            <input type="text" name="" id="c" readonly placeholder="ket qua">
+        </div>
+
+</body>
+<script>
+    function add(){
+        var a = document.getElementById('a').value * 1;
+        var b = document.getElementById('b').value *1 ;
+        var sum = a + b;
+        document.getElementById('c').value = sum;
+        
+    }
+    function sub(){
+        var a = document.getElementById('a').value * 1;
+        var b = document.getElementById('b').value *1 ;
+        var sum = a - b;
+        document.getElementById('c').value = sum;
+    }
+    function mul(){
+        var a = document.getElementById('a').value * 1;
+        var b = document.getElementById('b').value *1 ;
+        var sum = a * b;
+        document.getElementById('c').value = sum;
+    }
+    function div(){
+        var a = document.getElementById('a').value * 1;
+        var b = document.getElementById('b').value *1 ;
+        var sum = a / b;
+        document.getElementById('c').value = sum;
+    }
+</script>
+</html>
