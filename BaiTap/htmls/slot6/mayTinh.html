@@ -44,8 +44,14 @@
     function div(){
         var a = document.getElementById('a').value * 1;
         var b = document.getElementById('b').value *1 ;
-        var sum = a / b;
-        document.getElementById('c').value = sum;
-    }
+        if (b===0) {
+        document.getElementById('c').value = "số chia bằng 0";
+            
+        }else {
+
+            var sum = a / b;
+            document.getElementById('c').value = sum;
+        }
+        }
 </script>
 </html>

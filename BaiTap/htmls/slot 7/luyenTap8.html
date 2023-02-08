@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let age = +prompt("Nhập tuổi");
+    if (!isNaN(age)) {
+        if (age>0 && age<120) {
+            if (age === parseInt(age)) {
+                alert(`${age} là tuổi 1 người`);
+
+            }
+            else
+            {
+                alert(`${age} không phải là tuổi 1 người`);
+
+            }
+        }else
+        {
+            alert(`${age} không phải là tuổi 1 người`);
+
+        }
+    }
+    else {
+        alert("nhập sai dữ liệu")
+    }
+</script>
+</html>

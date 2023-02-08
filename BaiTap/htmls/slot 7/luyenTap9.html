@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = +prompt("Kiểm Tra 3 số có phải là 3 cạnh tam giác không ? Nhập a");
+    let b = +prompt("Kiểm Tra 3 số có phải là 3 cạnh tam giác không ? Nhập b");
+    let c = +prompt("Kiểm Tra 3 số có phải là 3 cạnh tam giác không ? Nhập c");
+    let temp = a*b*c;
+    if (!isNaN(temp)) {
+        var check = a+b>c?(b+c>a)?(c+a>b):false:false;
+        if (check) {
+            alert("a b c là 3 cạnh của 1 tam giác");
+
+        }else {
+            alert("Không phải là 3 cạnh tam giác")
+        }
+    }
+    else {
+        alert("nhập sai dữ liệu")
+    }
+</script>
+</html>

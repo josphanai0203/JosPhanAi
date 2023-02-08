@@ -21,8 +21,8 @@
             </select>
             <span> TO </span>
             <select name="" id="convert">
-                <option value="Binary" selected>USD</option>
-                <option value="Decimal">VND</option>
+                <option value="USD" selected>USD</option>
+                <option value="VND">VND</option>
                
             </select>
         </div>
@@ -48,6 +48,10 @@
         var newValue = number/23000;
         return newValue.toFixed(3)
     }
+    function usdToVnd(number){
+        let newValue = number*23000;
+        return newValue.toFixed(0)
+    }
     function myFunction(){
         var input = parseInt(document.getElementById("input").value)
         var caseA = document.getElementById("unconvert").value
@@ -57,7 +61,7 @@
             case 'USD':
                 switch (caseB) {
                     case 'VND':
-                        document.getElementById('result').value = vndToUsd(input)
+                        document.getElementById('result').value = usdToVnd(input)
                         break;
                 
                     default:

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = +prompt("Tính Phương Trình Bậc 2 ax^2 + bx +c = 0 .Nhập hệ số a :");
+    let b = +prompt("Tính Phương Trình Bậc 2 ax^2 + bx +c = 0 .Nhập hệ số b :");
+    let c = +prompt("Tính Phương Trình Bậc 2 ax^2 + bx +c= 0 .Nhập hệ số c :");
+
+    let dental = Math.pow(b,2)- (4*a*c);
+    if (!isNaN(dental)) {
+        if (dental<0) {
+            alert("Phương Trình Vô Nghiệm;")
+        }
+        else if(dental===0){
+            let x = (-b)/(2*a);
+             alert(`Phương Trình có 1 nghiệm kép x1 = x2 = ${x}`)
+        }
+        else {
+            let x1 = (-b + Math.sqrt(dental))/(2*a);
+            let x2 = (-b - Math.sqrt(dental))/(2*a);
+            alert(`Phương Trình có 2 nghiệm kép x1 = ${x1} ; x2 = ${x2} `)
+            
+        }
+    }
+    else {
+        alert("nhập sai dữ liệu")
+    }
+</script>
+</html>

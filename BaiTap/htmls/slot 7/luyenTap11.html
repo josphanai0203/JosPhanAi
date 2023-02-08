@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let income = +prompt("nhập số tiền thu nhập hằng tháng (đơn vị triệu đồng)")
+    let personTax;
+    if (!isNaN(income)) {
+        if (income>80) {
+            personTax = (income*35/100) - 9.85;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>52) {
+            personTax = (income*30/100) - 5.85;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>32) {
+            personTax = (income*25/100) - 3.25;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>18) {
+            personTax = (income*20/100) - 1.65;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>10) {
+            personTax = (income*15/100) - 0.75;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>5) {
+            personTax = (income*10/100) - 0.25;
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else if (income>0) {
+            personTax = (income*5/100);
+            alert(`Sô thuế thu nhập cá nhân là : ${personTax} Triệu Đồng `)
+        }
+        else {
+            alert("nhập sai dữ liệu");
+        }
+    }
+    else{
+        alert("nhập sai dữ liệu");
+    }
+</script>
+</html>
