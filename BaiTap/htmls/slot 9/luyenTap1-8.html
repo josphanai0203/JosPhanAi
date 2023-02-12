@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <button class="btn" onclick="findRandomNumber()">Chơi</button>
+
+    </div>
+</body>
+<style>
+    .box{
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<script>
+    function findRandomNumber(){
+        let rangeA = +prompt("Nhập vùng chọn số ngẫu nhiêu , nhập khoảng bắt đầu :")
+        let rangeB = +prompt("Nhập vùng chọn số ngẫu nhiêu , nhập khoảng kết thúc :")
+        let term = (rangeB-rangeA)+1;
+        if (!isNaN(term)) {
+            if (rangeA>rangeB) {
+                alert("Khoảng bắt đầu lớn hơn khoảng kết thúc ! vui lòng nhập lại" )
+                findRandomNumber();
+            }else {
+                let numberRandom = Math.floor(Math.random()*term + rangeA);
+                let enterNumber;
+                do {
+                    enterNumber = +prompt("Nhập số bạn đoán");
+                    if (enterNumber<numberRandom) {
+                        alert("Số cần tìm lớn hơn");
+                    }
+                    else if (enterNumber>numberRandom) {
+                        alert("Số cần tìm bé hơn");
+                        
+                    }
+                    else {
+                        alert("Chúc mừng bạn đã đoán đúng");
+
+                    }
+                } while (enterNumber!=numberRandom);
+            }
+        }else {
+            alert("Nhập sai dữ diệu ")
+            findRandomNumber();
+        }
+    }
+</script>
+</html>

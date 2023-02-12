@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let countCurrent = 0;
+    let flat = true;
+    for(let i =1,j=0;flat;j++){
+       countCurrent = countCurrent + i;
+       if (countCurrent%5==0) {
+            flat = false
+            document.write(countCurrent + "<br>");
+       }
+       i = countCurrent - i;
+    }
+</script>
+</html>
