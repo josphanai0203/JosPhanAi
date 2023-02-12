@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Cửu Chương</title>
+</head>
+<body>
+<h2 style="text-align: center;color: red">Bảng Cửu Chương</h2>
+    <script>
+        // let a = 1;
+        let tableStr;
+        tableStr="<table border='2'>";
+        for (let j = 1; j <= 10; j++) {
+            tableStr = tableStr+ "<tr>";
+            for (let i = 2; i <= 9; i++) {
+                tableStr=tableStr+"<td>" + i +"x"+ j + "=" + i*j +"</td>";
+            }
+            tableStr=tableStr+"</tr>";
+        }document.write("<br>");
+        tableStr=tableStr+"</table>";
+        document.write(tableStr);
+    </script>
+</body>
+</html>

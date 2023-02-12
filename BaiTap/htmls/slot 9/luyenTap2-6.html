@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    for(let i= 0;i<6;i++){
+        for(let j=0;j<7;j++){
+            if (i==0&&(j==0||j==3||j==6)) {
+                document.write("&nbsp;&nbsp")
+            }
+            else if (i==3&&(j==0||j==6)||i==4&&(j<=1||j>= 5)||i==5&&(j<=2||j>=4)) {
+                document.write("&nbsp;&nbsp")
+                
+            }
+            else{
+                document.write("*")
+            }
+        }
+        document.write("<br>")
+    }
+    document.write("<br>")
+    document.write("<br>")
+
+    </script>
+</html>

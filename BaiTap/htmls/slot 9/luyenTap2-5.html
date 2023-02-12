@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let presentMoney = +prompt("nhập số tiền vay ban đầu(đơn vị triệu đồng) : ")
+    let month = +prompt("nhập số tháng cho vay: ")
+    let interestRate = +prompt("Nhập lãi suất hàng thánh(đơn vị phần trăm): ")
+    let temp = presentMoney*month*interestRate;
+    if (!month===parseInt(month)) {
+        alert("Nhập sai số tháng");
+    }
+    else {
+        if (!isNaN(temp)) {
+            let futureMoney = presentMoney * Math.pow(( 1 + (interestRate/100)),month)
+            let mustPay = futureMoney - presentMoney;
+            alert(`Số Tiền lại là ${ mustPay.toFixed(3)} triệu đồng`)
+        }
+        else {
+            alert("Nhập sai dữ liệu")
+        }
+    }
+</script>
+</html>
