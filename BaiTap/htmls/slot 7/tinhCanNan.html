@@ -9,9 +9,9 @@
 <body>
 </body>
 <script>
-    var a = +prompt("Nhâp chiều cao (đơn vị mét) :    ") ;
-    var b = +prompt("Nhâp cân nặng (đơn vị kilogam) :    ") ;
-    let ibm = b/Math.pow(a,2);
+    var height = +prompt("Nhâp chiều cao (đơn vị mét) :    ") ;
+    var weight = +prompt("Nhâp cân nặng (đơn vị kilogam) :    ") ;
+    let ibm = weight/Math.pow(height,2);
     if (ibm>= 30) {
         document.write("obese");
     }else if (ibm >=25) {

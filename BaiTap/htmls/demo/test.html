@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="block">
+
+    </ul>
+</body>
+<script>
+    let users = [
+        {
+            id:1,
+            name: "jos Phan Ai"
+        },
+        {
+            id :2,
+            name:"thang nguyen"
+        }
+    ]
+    let comments = [
+        {
+            id:1,
+            user_id: 1,
+            content : "he xo lo"
+        },
+        {
+            id:2,
+            user_id:2,
+            content :"hi chao ban"
+        },
+        {
+            id :3,
+            user_id:1,
+            content:"bye"
+        }
+    ]
+    function getUserByID(userIDs){
+        return new Promise((resolve, reject) => {
+           let result = users.filter(function(user){
+                return userIDs.includes(user.id)
+            })
+            resolve(result)
+        })
+    }
+    function getComments(){
+        return new Promise((resolve, reject) => {
+            setTimeout(function(){
+                resolve(comments)
+            },1000)
+        })
+
+    }
+
+
+    //
+    load()
+    function load(){
+        getComments()
+        .then(function(result){
+            let userIDs = result.map(function(value){
+                return value.user_id
+            })
+            return getUserByID(userIDs)
+                .then(function(userList){
+                        return {
+                            users :userList,
+                            comments: comments
+                        }
+                })
+        })
+        .then(function(data){
+           let printf = document.getElementById("block");
+           let html = "";
+           console.log(data)
+             data.comments.forEach(function(comment){
+               let user = data.users.find(function(user){
+                    return user.id ===comment.user_id
+                })
+                return html += `<li>${user.name} : ${comment.content}</li>`
+            })
+            printf.innerHTML = html
+
+        })
+    }
+</script>
+</html>
