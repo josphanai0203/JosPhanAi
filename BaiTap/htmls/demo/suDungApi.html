@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Danh sách trai bao</h1>
+        <ul id="ulList">
+
+        </ul>
+    </div>
+</body>
+<script>
+    let apiUrl = "http://localhost:3000/user";
+    start()
+    function start() {
+            getApi(apiUrl)
+    }
+    function renderHtml(html) {
+        let ulList = document.getElementById("ulList");
+        ulList.innerHTML = html
+    }
+    function getApi(apiURl) {
+        fetch(apiURl)
+            .then(response => response.json())
+            .then(function(users){
+                let html = "";
+                users.forEach(element => {
+                    return html += `<li>${element.name} : ${element.money}</li>`
+                });
+                return 
+            })
+    }
+</script>
+</html>

@@ -76,7 +76,6 @@
         .then(function(data){
            let printf = document.getElementById("block");
            let html = "";
-           console.log(data)
              data.comments.forEach(function(comment){
                let user = data.users.find(function(user){
                     return user.id ===comment.user_id
@@ -84,7 +83,6 @@
                 return html += `<li>${user.name} : ${comment.content}</li>`
             })
             printf.innerHTML = html
-
         })
     }
 </script>
