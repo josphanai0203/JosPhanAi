@@ -13,27 +13,86 @@
 
         </ul>
     </div>
+    <div class="process">
+        <span>Tên </span><input type="text" name="name">
+        <span>giá </span><input type="number" name="money">
+        <button id="create">Thêm</button>
+        
+    </div>
 </body>
 <script>
     let apiUrl = "http://localhost:3000/user";
     start()
     function start() {
-            getApi(apiUrl)
+            getApi(apiUrl);
+            btnHandel();
+
     }
-    function renderHtml(html) {
+    function renderHtml(users) {
         let ulList = document.getElementById("ulList");
+        let html = "";
+                users.forEach(element => {
+                    return html +=
+                     `
+                     <li name:"${element.id}">${element.name} : ${element.money} <button onclick = "deleteData(${element.id})">xóa</button></li> 
+                    `
+                });
         ulList.innerHTML = html
+    }
+    function btnHandel(){
+        let createBtn = document.getElementById("create");
+        createBtn.onclick = function(){
+            let name = document.querySelector("input[name='name']").value
+            console.log(name)
+            let money = document.querySelector("input[name='money']").value
+            let data = {
+                name: name,
+                money:money
+            }
+            postData(data);
+        }
     }
     function getApi(apiURl) {
         fetch(apiURl)
             .then(response => response.json())
             .then(function(users){
-                let html = "";
-                users.forEach(element => {
-                    return html += `<li>${element.name} : ${element.money}</li>`
-                });
-                return 
+                renderHtml(users)
             })
     }
+    function postData(data){
+        let options = {
+            method: 'POST', 
+            body: JSON.stringify(data), 
+            headers:{
+                    'Content-Type': 'application/json'
+                    }
+                };
+        fetch(apiUrl,options)
+        .then(response => response.json())
+    }
+    function deleteData(data){
+        console.log(typeof(data))
+        fetch("http://localhost:3000/user/" + data,{
+            method:"DELETE"
+        })
+        .then(response => response.json())
+        .catch(err => console.log(err))
+    }
+    let name = "test";
+    let price = 1000;
+    let key = "value";
+    let object = {
+        name,
+        price,
+        getName(){
+            return this.name;
+        }
+    }
+    console.log(object.getName());
 </script>
+<style>
+    .btn{
+        margin-left: 100px;
+    }
+</style>
 </html>

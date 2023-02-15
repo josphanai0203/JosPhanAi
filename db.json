@@ -6,24 +6,9 @@
       "money": 200
     },
     {
-      "id": 2,
-      "name": "jos",
-      "money": 400
-    },
-    {
-      "id": 3,
-      "name": "luma",
-      "money": 400
-    },
-    {
-      "id": "4",
-      "name": "thu",
-      "money": "1000"
-    },
-    {
-      "id": "5",
-      "name": "long12",
-      "money": "1655"
+      "name": "trinh",
+      "money": "10",
+      "id": 2
     }
   ]
 }
