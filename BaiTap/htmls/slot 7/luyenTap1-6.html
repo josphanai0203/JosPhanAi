@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp học lực học sinh </title>
+</head>
+<body>
+<script>
+    let kiemtra =prompt("Nhập vào điểm bài kiểm tra : ");
+    let giuaky =prompt("Nhập vào điểm thi giữa kỳ : ");
+    let cuoiky =prompt("Nhập vào điểm thi cuối kỳ : ");
+
+    let ketqua=(kiemtra*0.2+giuaky*0.3+cuoiky*0.5);
+    if(ketqua>=8.0)
+        document.write("Hoc Sinh Gioi")
+    else if(ketqua>=6.5)
+        document.write("Hoc Sinh Kha")
+    if (ketqua>=5)
+        document.write("Hoc Sinh Trung Binh")
+    else if(ketqua>=3.5)
+        document.write("Hoc Sinh Yeu")
+    else
+        document.write("Hoc Sinh kem")
+
+</script>
+
+</body>
+</html>

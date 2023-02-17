@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bai 1
+    let colors = ["Red", "Green", "White", "Black"];
+    document.write(colors + "  " + typeof colors + "<br>");
+    let newArr = colors.toString();
+    document.write(newArr + "  " +  typeof newArr + "<br>"); ;
+    //bai 2
+    let arrNumber = [];
+    let length = +prompt("Nhap so luong phan tu trong mang :");
+    for (let i = 0; i < length; i++) {
+        arrNumber[i] = +prompt("nhap phan tu mang ");
+
+    }
+    let newNumberArr = [];
+    for (let i = 0; i < length; i++) {
+        if(arrNumber[i+1]%2==0&&arrNumber[i]%2==0){
+            newNumberArr.push(arrNumber[i])
+            newNumberArr.push("-");
+
+        }else {
+            newNumberArr.push(arrNumber[i]);
+        }
+
+    }
+    document.write(newNumberArr.join(""));
+    // bai 3
+    let string = prompt("nhap chuoi :");
+     let stringArr = string.split("");
+     for (let i = 0; i < stringArr.length; i++) {
+        if(/[a-z]/.test(stringArr[i])){
+            stringArr[i] = stringArr[i].toUpperCase();
+
+        }
+        else {
+            stringArr[i] = stringArr[i].toLowerCase();
+        }
+    }
+    document.write(stringArr.join(""));
+</script>
+</html>
