@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let numberString = prompt("nhap chuoi so , (các số cách nhau bởi dấu cách)"); 
+    let numbers = numberString.split(" ");
+    document.write(numbers)
+    let count = 0;
+    numbers.forEach((value)=>{
+        if (value<0){
+            if (parseInt(value)==parseFloat(value)) {
+                count++;
+            }
+        }
+    })
+    
+    document.write(`mảng có ${count}giá trị nguyên âm`)
+</script>
+</html>

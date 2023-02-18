@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let n = +prompt("nhap phan tu n muon tao:");
+    let randomArray = new Array(n);
+    for(let i = 0; i < n; i++){
+        randomArray[i] = Math.floor(Math.random()*100)
+    }
+    document.write("Random Array  =" + randomArray + "<br>");
+    let count = randomArray.reduce((start,current)=>start += current,0);
+    let avgCount = count / randomArray.length;
+    document.write("Giá trị lớn nhất là :" + Math.max(...randomArray) +"; giá trị trung bình bằng :"+ avgCount)
+</script>
+</html>

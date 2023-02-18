@@ -16,4 +16,4 @@ tabs.forEach((tab,index) => {
   line.style.left = tab.offsetLeft + "px";
   line.style.width = tab.offsetWidth + "px";
   });
-})
+}) mj
