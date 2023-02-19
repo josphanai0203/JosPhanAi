@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let lenght = +prompt("Nhập chiều dài mảng:");
+    let stringArr = new Array(lenght);
+    for (let i = 0; i < lenght; i++){
+        stringArr[i] = prompt(`nhập phần tử mảng arr[${i}]`)
+    }
+    let count = 0;
+    stringArr.forEach((string) =>{
+        if(/[0-9]/.test(string)){
+            count += 1;
+        }
+    });
+    document.write(stringArr + "<br>");
+    document.write("Số phần tử số tron mảng là :" +count)
+</script>
+</html>
