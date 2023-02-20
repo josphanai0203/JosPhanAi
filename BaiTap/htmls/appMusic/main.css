@@ -4,14 +4,17 @@
     margin: 0;
     padding: 0;
 }
+ul {
+    list-style-type: none;
+}
 a {
     text-decoration: none;
     color: #ffffff;
 }
-body {
+/* body {
     overflow: hidden;
 
-}
+} */
 .app{
     width: 90%;
     height:1000px ;
@@ -135,7 +138,104 @@ body {
 .contentBox_header .contentBox_header_right i {
     margin-right: 16px;
     cursor: pointer;
-} 
+}
+.recommended_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+.albumsList{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    list-style-type: none;
+    width: 100%;
+    margin: 12px;
+}
+.albumsList .album_img {
+    width: 90% ;
+    border-radius: 4px;
+}
+.albumsList .album_name {
+    padding: 4px 0;
+    width: 100%;
+}
+.albumsList .album_singer {
+    opacity: 0.6;
+}
+.musicSongs {
+    display: flex;
+    flex-direction: row;
+}
+.musicSongs .musicSongs_recently {
+    width: 50%;
+    border-right: 1px solid #DDd;
+}
+.musicSongs_recently .recently_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px;
+}
+.recently_content .recently_content_ulList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 12px;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.recently_content_ulList .item_song {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    margin: 12px 0;
+    cursor: pointer;
+}
+.musicSongs_topList {
+    margin: 12px;
+    width: 50%;
+    margin-left: 24px;
+}
+.item_song .item_songImg{
+    width: 35%;
+    border-radius: 4px;
+}
+.item_song .item_song_des{
+    font-size: 12px;
+    margin-left: 4px;
+    margin-top: 8px;
+}
+.item_song .item_song_des span{
+    opacity: 0.6;
+}
+.topList_content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.topList_content .title_ul {
+    width: 45%;
+
+}
+.topList_content .artist_ul ,.topList_content .album_ul{
+    width: 25%;
+}
+.ul_name {
+    opacity: 0.6;
+    margin-top: 8px;
+    background-color: #eee;
+    padding: 8px 4px;
+    padding-left: 12px;
+}
+.ul_toplist li{
+    margin: 8px 0;
+}
+
 /* ================================ Music Live ============================ =========================== */
 .musicLive {
     position: fixed;
@@ -143,4 +243,5 @@ body {
     height: 120px;
     background-color: #ccc;
     bottom: 0;
+    display: none;
 }
