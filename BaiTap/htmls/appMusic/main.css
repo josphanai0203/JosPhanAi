@@ -11,10 +11,10 @@ a {
     text-decoration: none;
     color: #ffffff;
 }
-body {
+/* body {
     overflow: hidden;
 
-}
+} */
 .app{
     width: 100%;
     display: flex;
@@ -243,7 +243,7 @@ body {
     height: 80px;
     background-color: #ccc;
     bottom: 0;
-    display: flex;
+    display: none;
     flex-direction: row;
 }
 .control { 
@@ -291,4 +291,7 @@ body {
 .subName{
     font-size: 10px;
     opacity: 0.6;
+}
+.fa-solid {
+    width: 10px;
 }
