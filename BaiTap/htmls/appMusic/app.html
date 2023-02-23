@@ -163,9 +163,30 @@
                 <button class="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
             </div>
             <div class="liveSong">
+                <img src="" alt="" class="liveSongImg">
+                      <div class="liveSongDes">
+                        <span class="mainName"></span><span class="subName"></span>
+                        <div class="audioBox">
+                        <span class="currentTime"></span>
+                        <input type="range" value="0"min="0" aria-valuetext="00:00" id="rangeSong" >
+                        <span class="endTime"></span>
+                        <audio id="audioLive" src = ""></audio>
 
+                        </div>
+                        </div>
             </div>
-            <div class="subControl"></div>
+            <div class="subControl">
+                <div class="reloadBox" style="cursor: pointer;">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <div class="muteBox">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <div class="volume">
+                    <input type="range" min="0" max="100" step="1" value="100" class="volumeBar">
+                </div>
+            </div>
+            
     </div>
 </body>
 <script src="./main.js"></script>

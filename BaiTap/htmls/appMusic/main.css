@@ -130,9 +130,8 @@ a {
 }
 #iconSearch {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 6px;
+    top: 8px;
+    right: 20px;
     cursor: pointer;
 }
 .contentBox_header .contentBox_header_right i {
@@ -279,8 +278,15 @@ a {
     margin:  0 12px;
     align-items: center;
 }
-.liveSongDes input {
+.audioBox {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.audioBox input{
+    width: 80%;
 }
 .liveSongImg {
     width: 80px;
@@ -294,4 +300,20 @@ a {
 }
 .fa-solid {
     width: 10px;
+}
+.subControl {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.muteBox {
+    cursor: pointer;
+}
+.rePlay {
+    color: #3B75FE;
+}
+.volume input {
+    cursor: pointer;
 }
