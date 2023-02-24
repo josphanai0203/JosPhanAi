@@ -25,7 +25,7 @@ a {
 .navigationLeft {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    
     width: 20%;
     background-color:#efe5e0ea;
     border-radius: 3px;
@@ -289,10 +289,11 @@ a {
     width: 80%;
 }
 .liveSongImg {
-    width: 80px;
-    height: 90%;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     margin-left: 12px;
+    border: 1px solid #000;
 }
 .subName{
     font-size: 10px;

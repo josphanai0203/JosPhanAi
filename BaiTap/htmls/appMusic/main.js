@@ -1,15 +1,27 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-let flat  = false;
+
 const imgLive = $('.liveSongImg')
 const nameLive =$('.mainName')
 const subNameLive = $('.subName');
 const audio = $('#audioLive');
-const rangeSong = $('#rangeSong'); 
+const rangeSong = $('#rangeSong');
+const imgRotate = $(".liveSongImg")
+const preBtn = $(".preBtn");
+const nextBtn = $(".nextBtn");
+const musicLive = $('.musicLive');
+const liveSong = $('.liveSong');
+const liSongs = $$('.item_song');
+const imgRotateAnimate = imgRotate.animate([{transform:"rotate(360deg)"}],{duration: 10000,iterations:Infinity})
+
 let temp = 1;
 let btn = ["fa-solid fa-play","fa-solid fa-pause"];
 let val =1;
 let volume = ["fa-solid fa-volume-high","fa-solid fa-volume-xmark"]
+let flat = false;
+let isRepeat = false;
+
+
 const app = {
     songs:[
         {
@@ -97,6 +109,7 @@ const app = {
             id: 12
         }
     ],
+    currentIndex: 1,
     render: function(){
         let htmls = this.songs.map((song)=>{
             return `
@@ -114,45 +127,66 @@ const app = {
         $('.recently_content_ulList').innerHTML = htmls.join('');
     },
     songClick: function(){
-        let liSongs = $$('.item_song');
-        const musicLive = $('.musicLive');
-        const liveSong = $('.liveSong');
+        const liSongs = $$('.item_song');
         liSongs.forEach(function(li){
             li.addEventListener('click', function(){
                 let currentSong = app.songs.find((song)=> song.id == li.id)
                 if (!flat) {
                     musicLive.style.display = 'flex'
-                    imgLive.src = currentSong.image;
-                    nameLive.innerHTML = currentSong.name;
-                    subNameLive.innerHTML = currentSong.singer
-                    audio.src = currentSong.path
+                    app.loadSong(currentSong);
                     flat = true;
                 }
                 else {
-                    musicLive.style.display = 'flex'
-                    imgLive.src = currentSong.image;
-                    nameLive.innerHTML = currentSong.name;
-                    subNameLive.innerHTML = currentSong.singer
-                    audio.src = currentSong.path
-                    if($('.stopBtn').firstChild.classList == "fa-solid fa-pause"){
-                        
-                        $('.stopBtn').firstChild.classList = btn[temp++ %  btn.length];
-                    }
+                    imgRotateAnimate.cancel();
+                    app.loadSong(currentSong);
+                    
                 }
             });
         })
 
     },
+    loadSong: function(currentSong){
+        imgLive.src = currentSong.image;
+        nameLive.innerHTML = currentSong.name;
+        subNameLive.innerHTML = currentSong.singer
+        audio.src = currentSong.path
+        app.currentIndex = currentSong.id;
+        imgRotateAnimate.play();
+        audio.play();
+        if($('.stopBtn').firstChild.classList == "fa-solid fa-play"){
+                        
+            $('.stopBtn').firstChild.classList = btn[temp++ %  btn.length];
+        }
+    },
+    nextSong(){
+        if(app.currentIndex == app.songs.length){
+            app.currentIndex = 0;
+        }
+        var nextSong = app.songs.find((song) => song.id == (app.currentIndex + 1))
+        app.loadSong(nextSong);
+    },
+    preSong(){
+        if(app.currentIndex == 1){
+            app.currentIndex = app.songs.length +1;
+        }
+        var preSong = app.songs.find((song) => song.id == (app.currentIndex -1))
+        app.loadSong(preSong);
+    }
+    ,
     handleEvent:  function(){
         let endTime = $(".endTime");
         let volumeBar = $('.volumeBar');
         let originValueVolume;
+        // image song is rotate when song play and pause
+        imgRotateAnimate.pause();
         //handle buttons play/pause events
         $('.stopBtn').onclick = function(){
            
             if (this.firstChild.classList == "fa-solid fa-play") {
                 audio.play();
+                imgRotateAnimate.play();
             }else {
+                imgRotateAnimate.pause();
                 audio.pause();
             }
             this.firstChild.classList = btn[temp++ %  btn.length];
@@ -166,9 +200,10 @@ const app = {
             rangeSong.max = audio.duration;
         };
         //handle seek bar audio and time current audio
-        rangeSong.onchange = () => audio.currentTime = rangeSong.value
+        rangeSong.oninput = ()=>audio.currentTime = rangeSong.value
         // update range input when currentTime updates
-        audio.ontimeupdate = () => rangeSong.value = audio.currentTime 
+        audio.ontimeupdate = ()=> rangeSong.value = audio.currentTime;
+
         audio.addEventListener('timeupdate',function (){
 
             var sec= new Number();
@@ -198,35 +233,47 @@ const app = {
             this.firstElementChild.classList = volume[val++ % volume.length];
         };
         //handle replay button click
-        let checkReplayActive = false;
         $(".reloadBox").onclick =function(){
+            isRepeat = !isRepeat;
             this.classList.toggle("rePlay");
-            if(this.classList.contains("rePlay")){
-                checkReplayActive = true;
-            }else{
-                checkReplayActive = false;
-            }
         };
         //when audio ended, if replay btn active then reload audio
         audio.onended = function(){
-            if(checkReplayActive){
+            if (isRepeat) {
                 audio.currentTime = 0;
                 audio.play();
-            }else{
-                $('.stopBtn').firstChild.classList = btn[temp++ %  btn.length];
+            }else {
+                app.nextSong();
             }
         };
         window.onkeydown = function(e){
-            if (e.target == rangeSong) {
-                if (e.keyCode == 37){
+                if(e.keyCode == 32){
+                    if(audio.paused){
+                        audio.play();
+                        imgRotateAnimate.play();
+                        $('.stopBtn').firstChild.classList = btn[temp++ %  btn.length];
+                    }else{
+                        audio.pause();
+                        imgRotateAnimate.pause();
+                        $('.stopBtn').firstChild.classList = btn[temp++ %  btn.length];
+                    }
+                }else if(e.keyCode == 37){
+                    e.preventDefault()
                     audio.currentTime -= 5;
-                    console.log(audio.currentTime)
                 }else if(e.keyCode == 39){
+                    e.preventDefault()
                     audio.currentTime += 5;
-                    console.log(audio.currentTime)
-                    
                 }
-            }
+        }
+        // click in next / previous song
+        preBtn.onclick = ()=>{
+            imgRotateAnimate.cancel();
+            app.preSong()
+
+        }
+        nextBtn.onclick = ()=>{
+            imgRotateAnimate.cancel();
+            app.nextSong()
         }
     },
     start: function(){
