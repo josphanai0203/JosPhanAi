@@ -1,3 +1,7 @@
+:root{
+    mainColor:#111727;
+
+}
 *{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -21,13 +25,16 @@ a {
     flex-direction: row;
 }
 /* ==================== Navigation============================ */
-
+.app {
+    background-color: #000;
+}
 .navigationLeft {
     display: flex;
     flex-direction: column;
     
     width: 20%;
-    background-color:#efe5e0ea;
+    background-color:#111727;
+    color: #fff;
     border-radius: 3px;
     margin-left: 12px;
 }
@@ -97,7 +104,8 @@ a {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #0b1320;
+    color: #fff;
     margin-right: 12px;
 }
 .contentBox_header {
@@ -108,7 +116,7 @@ a {
     padding: 24px;
     font-size: 20px;
     border: 1px solid #ddd;
-    background-color: #f1efef;
+    background-color: #0b1330;
     border-radius: 4px;
 }
 .contentBox_header .contentBox_header_left {
@@ -240,7 +248,9 @@ a {
     position: fixed;
     width: 100%;
     height: 80px;
-    background-color: #ccc;
+    background-color: #0b1330;
+    color: #fff;
+    border: 2px solid #0b1270;
     bottom: 0;
     display: none;
     flex-direction: row;
