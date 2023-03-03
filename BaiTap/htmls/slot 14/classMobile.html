@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Mobile {
+      constructor(batteryStatus) {
+        this.batteryStatus = batteryStatus;
+        this.messageWriting;
+        this.mailBox = [];
+        this.mailBoxSent = [];
+        this.isTurnOn = true;;
+        this.isCharging = false;
+      }
+      checkStatus() {
+        if ( this.isTurnOn) {
+          this.batteryStatus -= 1;
+          return this.isTurnOn;
+        }
+      }
+      turnOn() {
+        if (!this.isTurnOn) {
+          this.batteryStatus -= 1;
+          return !this.isTurnOn;
+        }
+      }
+      turnOff() {
+        if (this.isTurnOn) {
+          this.batteryStatus -= 1;
+          return !this.isTurnOn;
+        }
+      }
+
+      batteryCharger() {
+        if (!isCharging) {
+          isCharging = true;
+        }
+      }
+
+      writeMessage(message) {
+        if (this.isTurnOn) {
+          this.batteryStatus -= 1;
+          this.setMessage(message);
+        }
+      }
+      receiveMessages(message) {
+        if (this.isTurnOn) {
+          this.batteryStatus -= 1;
+          this.setMailBox(message);
+        }
+      }
+
+      sentMessage(otherMessage) {
+        if (this.isTurnOn) {
+          this.batteryStatus -= 1;
+
+          otherMessage.receiveMessages(this.getMessage());
+
+        }
+      }
+      seenMessage() {
+        return this.mailBox[this.mailBox.length - 1]
+      }
+      setMessage(message) {
+        this.messageWriting = message;
+      }
+      getMessage(){
+        return this.messageWriting;
+      }
+      setMailBox(message) {
+        this.mailBox.push(message);
+      }
+      setMailBoxSent(message) {
+        this.mailBoxSent.push(message);
+      }
+    }
+    let nokia = new Mobile(100);
+    let iphone = new Mobile(100);
+    nokia.writeMessage("hello world");
+    nokia.sentMessage(iphone)
+    console.log(iphone.seenMessage())
+  </script>
+</html>
