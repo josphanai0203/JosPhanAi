@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="broadGame">
-        <div class="ball">
-        </div>
+        <div class="ball"></div>
+        <button class="btn">Play</button>
         <div class="barGame"></div>
     </div>
 </body>
@@ -18,24 +18,38 @@
         border: 1px solid #000;
         margin: auto;
         position: relative;
-        /* cursor: none; */
+        cursor: ;
+        background-color: antiquewhite;
     }
     .ball {
-        background-color: #000;
+        background: linear-gradient(#c6ffdd, #fbd786,#f7797d);
         border-radius: 50%;
         position: absolute;
         width: 20px;
         height: 20px;
         transition: all ease-in 50ms linear;;
+        border: 1px solid #555;
 
     }
     .barGame {
         height: 20px;
-        background-color: blue;
+        background-color: #6A5ACD;
         position: absolute;
         bottom: 100px;
         left: 20px;
         
+    }
+    .btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        cursor: pointer;
+        border: 2px solid #0de123;
+        border-radius: 4px;
+        background-color: aquamarine;
+        padding: 4px 8px;
+        box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.5);
+
     }
 </style>
 <script src="./main.js"></script>
