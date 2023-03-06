@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    class ElectricLamp{
+        constructor(){
+            this.status ;
+        }
+        ElectricLamp(){
+            this.status =false ;
+        }
+        turnOn(){
+            if(!this.status){
+                console.log("Electric Lamp on ")
+                this.status = !this.status ;
+            }
+        }
+        turnOff(){
+            if(this.status){
+                console.log("Electric Lamp off ")
+                this.status = !this.status ;
+            }
+        }
+    }
+    class SwitchButton{
+        constructor(){
+            this.status;
+            this.lamp;
+
+        }
+        SwitchButton(){
+            this.status = false;
+
+        }
+        connectToLamp(lamp){
+            this.lamp = lamp;
+        }
+        switchOff(){
+            if(this.status){
+                this.status = !this.status ;
+                this.lamp.turnOff();
+            }
+        }
+        switchOn(){
+            if(!this.status){
+                this.status = !this.status ;
+                this.lamp.turnOn();
+            }
+        }
+
+    }
+
+    let switchBtn = new SwitchButton();
+    let lamp = new ElectricLamp();
+    lamp.ElectricLamp();
+    switchBtn.SwitchButton();
+    switchBtn.connectToLamp(lamp);
+    switchBtn.switchOn();
+    switchBtn.switchOff()
+    switchBtn.switchOn();
+    switchBtn.switchOff()
+    switchBtn.switchOn();
+    switchBtn.switchOff()
+    switchBtn.switchOn();
+    switchBtn.switchOff()
+    switchBtn.switchOn();
+    switchBtn.switchOff()
+</script>
+</html>
