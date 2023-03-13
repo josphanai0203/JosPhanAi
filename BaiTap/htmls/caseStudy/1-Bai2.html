@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra ky tu </title>
+</head>
+<body>
+<script>
+    let c=prompt("Nhap vao 1 ky tu : ");
+    let a = ["A","E","O","U","I"]
+     c = c.toLocaleUpperCase()
+    if(!a.some((value)=> c==value))
+    {
+        document.write("Đây là phụ âm");
+    } else{
+        document.write("Đây là nguyên âm");
+    }
+</script>
+</body>
+</html>
