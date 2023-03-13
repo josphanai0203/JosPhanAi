@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let income = +prompt("Enter income :");
+    if(!isNaN(income)){
+        let taxIncome;
+        let realIncome;
+        if(income>0){
+            if(income>15000000){
+                taxIncome = income*20/100;
+                realIncome = income - taxIncome;
+            }else if(income>7000000){
+                taxIncome = income*10/100;
+                realIncome = income - taxIncome;
+            }else if(income>0){
+                taxIncome = income*5/100;
+                realIncome = income - taxIncome;
+            }
+    
+            document.write(`your tax income : ${taxIncome} <br132> your real income : ${realIncome}`)
+
+        }else {
+            document("wrong Input");
+        }
+    }
+</script>
+</html>

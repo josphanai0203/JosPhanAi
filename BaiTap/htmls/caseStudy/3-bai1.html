@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let randomArr = [];
+    for (let i = 0; i < 10; i++) {
+      randomArr[i] = Math.floor(Math.random() * 10 + 1);
+    }
+    document.write(`Random Arrays: ${randomArr}`);
+    let customArr = [];
+    for (let i = 0; i < randomArr.length; i++) {
+      customArr[i] = 0;
+      for (let j = 0; j <= i; j++) {
+        customArr[i] += randomArr[j];
+      }
+    }
+
+    document.write(`Custom Arrays: ${customArr}`);
+  </script>
+</html>

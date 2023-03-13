@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let numerators = prompt("enter numerators array :");
+    let denominators = prompt("enter denominators array :");
+    numerators = numerators.split(",");
+    denominators = denominators.split(",");
+    if (numerators.length == denominators.length) {
+      document.write(`numerators array: ${numerators}`);
+      document.write(`denominators array: ${denominators}`);
+      let max = numerators[0] / denominators[0];
+      let index = 0;
+      for (let i = 1; i < numerators.length; i++) {
+        if (numerators[i] / denominators[i] >= max) {
+          max = numerators[i] / denominators[i];
+          index = i;
+        }
+      }
+      document.write(`<br> Max : ${numerators[index]}/${denominators[index]} <br> Index : ${index}`);
+    }
+  </script>
+</html>

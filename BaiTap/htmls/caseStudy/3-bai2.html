@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let length = +prompt("nhap so luong phan tu mang muon tao");
+    let randomArr = [];
+    for (let i = 0; i < length; i++) {
+      randomArr[i] = Math.floor(Math.random() * 20 + 1);
+    }
+    document.write(`Random Arrays: ${randomArr}`);
+    let arr = prompt("nhap mang muon kiem tra");
+    arr = arr.split(",");
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (!randomArr.some((value) => value == arr[i])) {
+        newArr.push(arr[i])
+      }
+    }
+    document.write(`<br>Check Arrays: ${arr}`);
+    document.write(`<br>Missing Arrays: ${newArr}`);
+  </script>
+</html>

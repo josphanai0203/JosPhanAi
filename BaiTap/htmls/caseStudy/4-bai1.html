@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let string = prompt("nhap chuoi");
+    string = string.trim();
+    string.toLowerCase();
+    let stringArr = string.split("");
+    for (let i = 0; i < stringArr.length; i++) {
+      if (stringArr[i] == " " && stringArr[i - 1] == " ") {
+        stringArr.splice(i, 1);
+        i--;
+      }
+      if (i == 0 || (i > 0 && stringArr[i - 1] == " ")) {
+        stringArr[i] =stringArr[i].toUpperCase();
+      }
+    }
+    document.write(` String : ${stringArr.join("")}`)
+  </script>
+</html>

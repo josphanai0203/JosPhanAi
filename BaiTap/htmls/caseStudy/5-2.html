@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPrime(number){
+        if(number ==1){
+            return false;
+        }
+        for(let i =2;i<number;i++){
+            if(!(number%i)){
+                return false;
+            }
+        }
+        return true;
+
+    }
+    let row = +prompt("nhap so dong :");
+    let col = +prompt("Nhap so cot :");
+    // init 2D array
+    let arr = new Array(row);
+    for (let i = 0; i < row; i++){
+        arr[i] = new Array();
+    }
+    // access random number in array
+    for(let i = 0; i < row; i++){
+        for(let j = 0; j < col; j++){
+            arr[i][j] = Math.floor(Math.random() * 100 +1);
+
+        }
+    }
+    let count = 0
+    document.write("Arr :");
+    for(let i = 0; i < row; i++){
+        document.write("[");
+        for(let j = 0; j < col; j++){
+            document.write(arr[i][j] +",");
+        }
+        document.write("],");
+    }
+    // check prime 
+    document.write("<br> Prime : ");
+    for(let i = 0; i < row; i++){
+        for(let j = 0; j < col; j++){
+            if(isPrime(arr[i][j])){
+                document.write(arr[i][j] +",")
+                count++;
+            }
+
+        }
+    }
+    document.write("<br> count : "+ count)
+</script>
+</html>

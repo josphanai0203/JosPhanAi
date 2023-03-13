@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let row = +prompt("nhap so dong :");
+    let col = +prompt("Nhap so cot :");
+    // init 2D array
+    let arr = new Array(row);
+    for (let i = 0; i < row; i++) {
+      arr[i] = new Array();
+    }
+    // access random number in array
+    for (let i = 0; i < row; i++) {
+      for (let j = 0; j < col; j++) {
+        arr[i][j] = Math.floor(Math.random() * 100 + 1);
+      }
+    }
+    document.write("Arr :");
+    for (let i = 0; i < row; i++) {
+      document.write("[");
+      for (let j = 0; j < col; j++) {
+        document.write(arr[i][j] + ",");
+      }
+      document.write("],");
+    }
+    // Find min and max values
+    document.write("Arr :");
+    let max = 0;
+    let min = 0;
+    max = Math.max(...arr[0]);
+    min = Math.min(...arr[0]);
+    for (let i = 1; i < row; i++) {
+      if (max < Math.max(...arr[i])) {
+        max = Math.max(...arr[i]);
+      }
+      if (min > Math.min(...arr[i])) {
+        min = Math.min(...arr[i]);
+      }
+    }
+    document.write("<br> Max : " + max + " <br>Min : " + min )
+  </script>
+</html>

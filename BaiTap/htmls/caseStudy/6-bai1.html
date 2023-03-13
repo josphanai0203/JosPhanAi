@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="btn">
+        <button onclick="add()">Thêm Học Viên</button>
+        <button onclick="fix()">Sửa Thông Tin</button>
+        <button onclick="deleteStd()">Xóa Học Viên</button>
+      </div>
+      <table id="main"></table>
+    </div>
+  </body>
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table {
+      width: 50%;
+      text-align: center;
+      margin: auto;
+    }
+    .box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .btn button {
+      margin: 12px 24px;
+    }
+    .name,
+    .email {
+      width: 15%;
+    }
+    .studentCode,
+    .nameClass,
+    .birthDate,
+    .module {
+      width: 5%;
+    }
+  </style>
+  <script src="./6-opp.js"></script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let choice;
+    while (true) {
+      do {
+        choice = +prompt(
+          `1(cafe)2(cam vắt)3(nước ép cà rốt)4(nước ép cà chua)5(nước lọc)6(nước dừa)7(thoát gọi món)`
+        );
+      } while (choice < 1 || choice > 7);
+      let count, total;
+      if(choice ==7){
+        break;
+      }
+      switch (choice) {
+        case 1:
+          count = +prompt("Cafe - 15k >>> Nhap so luong mua");
+          total = count * 15000;
+          break;
+        case 2:
+          count = +prompt("cam vắt - 20k >>> Nhap so luong mua");
+          total = count * 20000;
+          break;
+        case 3:
+          count = +prompt("nước ép cà rốt - 20k >>> Nhap so luong mua");
+          total = count * 20000;
+          break;
+        case 4:
+          count = +prompt("nước ép cà chua - 20k >>> Nhap so luong mua");
+          total = count * 20000;
+          break;
+        case 5:
+          count = +prompt("nước lọc - 10k >>> Nhap so luong mua");
+          total = count * 10000;
+          break;
+        case 6:
+          count = +prompt("(nước dừa - 15k >>> Nhap so luong mua");
+          total = count * 15000;
+          break;
+
+        default:
+          break;
+      }
+      alert(`total "${total}`)
+    }
+  </script>
+</html>
